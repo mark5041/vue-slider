@@ -29,6 +29,7 @@ const app = new Vue (
                     this.position = 0;
                 }
             },
+            
             prevImage: function()
             {
                 this.position -= 1;
@@ -37,18 +38,24 @@ const app = new Vue (
                     this.position = this.images.length - 1;
                 }
             },
+
             selectedCircle: function(index)
             {
                 this.position = index;
             },
-            mouseHoverActive: function(){
+
+            mouseHoverActive: function()
+            {
                 this.active = !this.active;  
                 console.log(this.active); 
             }, 
-            mouseHovernoActive: function(){
+
+            mouseHovernoActive: function()
+            {
                 this.active = !this.active;   
                 console.log(this.active); 
             },
+
             dynamic: function()
             {
                 this.timer = setInterval(() => {
