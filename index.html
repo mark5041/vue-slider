@@ -14,22 +14,21 @@
 <body>
   <div id="app" class="container">
     <div class="slider-wrapper">
-      <div class="prev">
-        <i class="fas fa-angle-left"></i>
-      </div>
-      <div class="images">
-        <img src="images/image1.jpg" alt="">
-      </div>
-      <div class="next">
-        <i class="fas fa-angle-right"></i>
-      </div>
-      <div class="nav">
-        <i class="fas fa-circle"></i>
-        <i class="fas fa-circle"></i>
-        <i class="fas fa-circle"></i>
-      </div>
+        <div @click="prevImage" class="prev">
+            <i class="fas fa-angle-left"></i>
+        </div>
+        <div @mouseover = "mouseHoverActive" @mouseleave = "mouseHovernoActive" class="images">
+            <img :src="`images/${images[position]}`" alt="">
+        </div>
+        <div @click="nextImage" class="next">
+            <i class="fas fa-angle-right"></i>
+        </div>
+        <div class="nav">
+            <i @click="selectedCircle(index)" v-for="(element, index) in images" 
+            class="fas fa-circle" :class="(position == index) ? 'active' : ''"></i>
+        </div>
     </div>
-  </div>
+</div>
 
   <script src="js/script.js"></script>
 </body>
