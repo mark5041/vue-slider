@@ -29,7 +29,7 @@ const app = new Vue (
                     this.position = 0;
                 }
             },
-            
+
             prevImage: function()
             {
                 this.position -= 1;
@@ -63,7 +63,7 @@ const app = new Vue (
                     {
                         this.nextImage();
                     }
-                }, 2500);
+                }, 3000);
             }
         },
         created() 
